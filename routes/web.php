@@ -30,4 +30,6 @@ Route::get("/set_language/{lang}", function ($lang){
     return view("posts.create");
 })->name("set_language");
 
+Route::fallback([PostController::class, "create"]);
+
 require __DIR__.'/auth.php';

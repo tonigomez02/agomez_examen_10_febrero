@@ -83,9 +83,13 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreatePostRequest $request, $id)
     {
-        //
+        $post = Post::find($id);
+        $post->update($request->validated());
+        $post->save();
+
+        return redirect("posts");
     }
 
     /**

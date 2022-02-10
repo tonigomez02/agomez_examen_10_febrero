@@ -3,6 +3,7 @@
 @section("content")
 
     <h1>Posts</h1>
+    <a href="{{route("posts.create")}}" class="btn btn-primary mt-3 px-3" style="width:fit-content ">@lang("Add")</a>
 
     <div class="container-lg d-flex flex-column align-items-center">
         @foreach($posts as $post)

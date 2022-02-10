@@ -21,20 +21,20 @@
 
         <form action="{{route("posts.update", $post)}}" method="POST" class="container" enctype="multipart/form-data">
             @csrf
-
+            @method("PUT")
             <div class="mb-3">
                 <label for="" class="form-label">@lang("Title")</label>
-                <input id="title" name="title" type="text" class="form-control" value="{{old("title")}}" required>
+                <input id="title" name="title" type="text" class="form-control" value="{{$post->title}}" required>
             </div>
 
             <div class="mb-3">
                 <label for="" class="form-label">@lang("Summary")</label>
-                <input id="summary" name="summary" type="text" class="form-control"  value="{{old("summary")}}" required>
+                <input id="summary" name="summary" type="text" class="form-control"  value="{{$post->summary}}" required>
             </div>
 
             <div class="mb-3">
                 <label for="" class="form-label">@lang("Description")</label>
-                <textarea id="description" name="description" class="form-control"></textarea>
+                <textarea id="description" name="description" class="form-control">{{$post->description}}</textarea>
             </div>
 
             <div class="mb-3">
@@ -60,7 +60,7 @@
 
             <div class="mb-3">
                 <label for="" class="form-label">@lang("Date publication")</label>
-                <input id="date_publication" name="date_publication" type="date" class="form-control" {{old("date_publication")}} required>
+                <input id="date_publication" name="date_publication" type="date" class="form-control" value="{{$post->date_publication}}" required>
             </div>
 
             <div class="mt-4">
