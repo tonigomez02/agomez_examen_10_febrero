@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,5 +24,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::resource("posts", PostController::class)->middleware("auth");
+
+Route::get("/set_language/{lang}", function ($lang){
+    App::setLocale($lang);
+    return view("posts.create");
+})->name("set_language");
 
 require __DIR__.'/auth.php';

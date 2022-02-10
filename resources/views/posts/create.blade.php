@@ -2,6 +2,11 @@
 
 @section("content")
 
+    <div class="d-flex align-items-center">
+        <a href="{{route("set_language", "es")}}" class="">Spanish</a>
+        <a href="{{route("set_language", "en")}}">English</a>
+    </div>
+
     <div class="container-sm px-md-5">
 
         <form action="{{route("posts.store")}}" method="POST" class="container" enctype="multipart/form-data">
@@ -39,9 +44,9 @@
             </div>
 
             <select class="form-select" aria-label="Default select example">
-                <option selected>Access</option>
-                <option value="private" {{ old('private') == 'private' ? 'checked' : '' }}>Private</option>
-                <option value="public" {{ old('public') == 'public' ? 'checked' : '' }}>Public</option>
+                <option selected>@lang("Public")</option>
+                <option value="private" {{ old('private') == 'private' ? 'checked' : '' }}>@lang("Private")</option>
+                <option value="public" {{ old('public') == 'public' ? 'checked' : '' }}>@lang("Public")</option>
             </select>
 
             <div class="mb-3">
