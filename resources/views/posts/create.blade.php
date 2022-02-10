@@ -9,6 +9,16 @@
 
     <div class="container-sm px-md-5">
 
+        @if ($errors->any())
+            <div class="alert alert-danger container mt-3">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <form action="{{route("posts.store")}}" method="POST" class="container" enctype="multipart/form-data">
             @csrf
 
