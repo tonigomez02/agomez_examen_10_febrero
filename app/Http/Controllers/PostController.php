@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreatePostRequest;
+use App\Models\Player;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,11 +13,14 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $post = Post::all();
+        return view("posts.index", [
+           "posts" => $post
+        ]);
     }
 
     /**
@@ -66,7 +70,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $player = Player::find($id);
+        return view("players.edit")->with("player", $player);
     }
 
     /**
