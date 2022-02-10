@@ -40,28 +40,27 @@
             <div class="mb-3">
                 <p class="text-primary fs-5">@lang("Options")</p>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="expired" name="expired" {{ old('expired') == 'expired' ? 'checked' : '' }}>
+                    <input class="form-check-input" type="checkbox" value="1" name="expired" {{ old('expired') == 'expired' ? 'checked' : '' }}>
                     <label class="form-check-label" for="">
                         @lang("Expired")
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="commentable" name="commentable" {{ old('commentable') == 'commentable' ? 'checked' : '' }}>
+                    <input class="form-check-input" type="checkbox" value="1" name="commentable" {{ old('commentable') == 'commentable' ? 'checked' : '' }}>
                     <label class="form-check-label" for="">
                         @lang("Commentable")
                     </label>
                 </div>
             </div>
 
-            <select class="form-select" aria-label="Default select example">
-                <option selected>@lang("Public")</option>
-                <option value="private" {{ old('private') == 'private' ? 'checked' : '' }}>@lang("Private")</option>
-                <option value="public" {{ old('public') == 'public' ? 'checked' : '' }}>@lang("Public")</option>
+            <select class="form-select" aria-label="Default select example" name="access">
+                <option >@lang("Public")</option>
+                <option >@lang("Private")</option>
             </select>
 
             <div class="mb-3">
                 <label for="" class="form-label">@lang("Date publication")</label>
-                <input id="date_publication" name="date_publication" type="date" class="form-control" {{old("summary")}} required>
+                <input id="date_publication" name="date_publication" type="date" class="form-control" {{old("date_publication")}} required>
             </div>
 
             <div class="mt-4">

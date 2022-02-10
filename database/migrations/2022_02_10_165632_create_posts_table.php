@@ -20,8 +20,8 @@ class CreatePostsTable extends Migration
             $table->string("summary")->nullable();
             $table->string("description");
             $table->string("access");
-            $table->boolean("expired")->nullable();
-            $table->boolean("commentable")->nullable();
+            $table->boolean("expired")->nullable()->default(0);
+            $table->boolean("commentable")->nullable()->default(0);
             $table->date("date_publication");
             $table->timestamps();
 
