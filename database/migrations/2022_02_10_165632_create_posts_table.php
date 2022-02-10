@@ -15,14 +15,19 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("user_id")->nullable();
             $table->string("title");
             $table->string("summary")->nullable();
             $table->string("description");
             $table->string("access");
-            $table->boolean("expired");
-            $table->boolean("commentable");
+            $table->boolean("expired")->nullable();
+            $table->boolean("commentable")->nullable();
             $table->date("date_publication");
             $table->timestamps();
+
+            $table->foreign("user_id")->references("id")->on("users")
+                ->onUpdate("cascade")
+                ->onDelete("set null");
         });
     }
 
