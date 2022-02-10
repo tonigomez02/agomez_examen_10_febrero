@@ -14,12 +14,12 @@
 
             <div class="mb-3">
                 <label for="" class="form-label">@lang("Title")</label>
-                <input id="title" name="title" type="text" class="form-control" value="{{old("title")}}">
+                <input id="title" name="title" type="text" class="form-control" value="{{old("title")}}" required>
             </div>
 
             <div class="mb-3">
                 <label for="" class="form-label">@lang("Summary")</label>
-                <input id="summary" name="summary" type="text" class="form-control"  value="{{old("summary")}}">
+                <input id="summary" name="summary" type="text" class="form-control"  value="{{old("summary")}}" required>
             </div>
 
             <div class="mb-3">
@@ -51,7 +51,7 @@
 
             <div class="mb-3">
                 <label for="" class="form-label">@lang("Date publication")</label>
-                <input id="date_publication" name="date_publication" type="date" class="form-control" {{old("summary")}}>
+                <input id="date_publication" name="date_publication" type="date" class="form-control" {{old("summary")}} required>
             </div>
 
             <div class="mt-4">
