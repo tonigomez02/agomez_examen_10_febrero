@@ -70,9 +70,10 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+        //$this->authorize("edit");
 
-        $player = Player::find($id);
-        return view("players.edit")->with("player", $player);
+        $post = Post::find($id);
+        return view("posts.edit")->with("post", $post);
     }
 
     /**
